@@ -13,22 +13,14 @@ SRC_URI = " \
           file://001-fix-kernel-version-detection.patch \
           file://100-add-rtsp-conntrack.patch \
           file://200-add-lua-packetscript.patch \
-          file://201-fix-lua-packetscript.patch \
           file://202-add-lua-autoconf.patch \
-          file://400-fix-IFF_LOWER_UP-musl.patch \
-          file://0001-Unset-LDFLAGS-for-kernel-modules.patch \
+          file://300-fix-path-Makefile.extra.patch \
           "
-SRC_URI[sha256sum] = "8c9f4c6a8e92eb7cfbf03f4ebcb1e1e793256c2efd0226d83312bfb0ffe14b84"
+SRC_URI[sha256sum] = "e47ea8febe73c12ecab09d2c93578c5dc72d76f17fdf673397758f519cce6828"
 
 MODULES_MODULE_SYMVERS_LOCATION = "../${BP}/extensions"
 
 EXTRA_OECONF = "--with-kbuild=${STAGING_KERNEL_DIR}"
-
-do_compile:prepend () {
-    # install additional empty wrappers
-    touch ${S}/extensions/LUA/lua/include/stdarg.h
-    touch ${S}/extensions/LUA/lua/include/stddef.h
-}
 
 EXTRA_OEMAKE = "M=${S}/extentions DESTDIR=${D} V=1"
 MODULES_INSTALL_TARGET = "install"
