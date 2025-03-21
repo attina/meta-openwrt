@@ -96,6 +96,8 @@ do_install:append () {
         rm -f ${STMP}/etc/openwrt_version
         rm -f ${STMP}/etc/openwrt_release
         rm -f ${STMP}/etc/uci-defaults/13_fix-group-user
+        rm -f ${STMP}/etc/uci-defaults/11_network-migrate-bridges
+        rm -f ${STMP}/etc/uci-defaults/50-root-passwd
         # We want this to fail if Openwrt adds more to this dir, so no rm -rf
         rmdir ${STMP}/etc/uci-defaults
 

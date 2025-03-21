@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=a8db84c7a073d2878849eee8eb0f5daa"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}-scripts:"
 
-SRC_URI += "git://github.com/openwrt/openwrt.git;protocol=https;branch=openwrt-22.03 \
+SRC_URI += "git://github.com/openwrt/openwrt.git;protocol=https;branch=openwrt-24.10 \
            "
 
 SRCREV = "${OPENWRT_SRCREV}"
